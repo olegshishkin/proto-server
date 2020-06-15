@@ -12,7 +12,7 @@ public class App {
 
     public static void main( String[] args ) throws IOException, InterruptedException {
         Server server = ServerBuilder
-                .forPort(8080)
+                .forPort(9090)
                 .addService(new SimpleServiceImpl())
                 .build();
 
