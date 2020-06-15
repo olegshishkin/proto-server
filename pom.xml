@@ -17,6 +17,7 @@
     <grpc.version>1.30.0</grpc.version>
     <protobuf.version>3.12.3</protobuf.version>
     <plugins.protobuf.version>0.6.1</plugins.protobuf.version>
+    <log4j.version>2.13.0</log4j.version>
   </properties>
 
   <dependencies>
@@ -34,6 +35,16 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
       <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
     </dependency>
   </dependencies>
 
