@@ -4,7 +4,6 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.IOException;
 
 public class App {
@@ -14,11 +13,11 @@ public class App {
     public static void main( String[] args ) throws IOException, InterruptedException {
         Server server = ServerBuilder
                 .forPort(8080)
-                .addService(new SimpleServiceImpl()).build();
+                .addService(new SimpleServiceImpl())
+                .build();
 
-        LOGGER.info("Starting server...");
         server.start();
-        LOGGER.info("Server started!");
+        LOGGER.warn("Server started!");
         server.awaitTermination();
     }
 }

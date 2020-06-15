@@ -13,7 +13,7 @@ public class SimpleServiceImpl extends SimpleServiceImplBase {
 
     @Override
     public void call(SimpleRq request, StreamObserver<SimpleRs> responseObserver) {
-        LOGGER.info("Rq: [name: {}, age: {}]", request.getName(), request.getAge());
+        LOGGER.warn("Rq: [name: {}, age: {}]", request.getName(), request.getAge());
         SimpleRs rs = SimpleRs.newBuilder()
                 .setMsg("rq " + request.getName() + " received")
                 .build();
