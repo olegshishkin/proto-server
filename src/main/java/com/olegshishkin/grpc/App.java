@@ -1,11 +1,18 @@
 package com.olegshishkin.grpc;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import java.io.IOException;
 
-@SpringBootApplication
 public class App {
-    public static void main( String[] args ) {
-        SpringApplication.run(App.class, args);
+    public static void main( String[] args ) throws IOException, InterruptedException {
+        Server server = ServerBuilder
+                .forPort(8080)
+                .addService(new SimpleServiceImpl()).build();
+
+        System.out.println("Starting server...");
+        server.start();
+        System.out.println("Server started!");
+        server.awaitTermination();
     }
 }
