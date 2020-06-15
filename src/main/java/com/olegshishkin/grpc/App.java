@@ -17,7 +17,7 @@ public class App {
                 .build();
 
         server.start();
-        LOGGER.warn("Server started!");
+        LOGGER.warn("Server started at port {}", server.getPort());
         server.awaitTermination();
     }
 }
